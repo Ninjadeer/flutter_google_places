@@ -11,12 +11,14 @@ class AutoCompleteRequest {
    String input;
    LocationBias locationBias;
    LatLng origin;
+   String sessionToken;
 
    Map<String, dynamic> toMap() {
      return {
        "input" : input,
        "locationBias" : locationBias?.toMap(),
-       "origin" : origin?.toMap()
+       "origin" : origin?.toMap(),
+       "sessionToken" : sessionToken
      };
    }
 
@@ -89,6 +91,7 @@ class GooglePlaces {
 
       result.forEach((dynamic prediction) {
         if (prediction is Map) {
+            print(prediction['distance']);
             predictions.add(AutocompletePrediction(
               fullText: prediction['fullText'],
               primaryText: prediction['primaryText'],

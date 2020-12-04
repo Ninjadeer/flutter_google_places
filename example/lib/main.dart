@@ -59,6 +59,8 @@ class _MyAppState extends State<MyApp> {
 
             request.origin = LatLng(-33.8749937, 151.2041382);
 
+            request.sessionToken = "0f95cc9b-9e8e-49cf-b85e-8cd639bdbc16";
+
             var bar = await GooglePlaces.autocomplete(request);
 
             print(bar);
